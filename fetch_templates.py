@@ -54,7 +54,7 @@ def fetch_model_info(model_name):
     """
     Fetch detailed information about a specific note type (model).
     """
-    return invoke("modelInfo", {"modelName": model_name})
+    return invoke("modelTemplates", {"modelName": model_name})
 
 
 def save_template(model_name, model_info):

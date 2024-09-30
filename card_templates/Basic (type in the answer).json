@@ -1,0 +1,6 @@
+{
+    "Card 1": {
+        "Front": "{{Front}}\n\n{{type:Back}}",
+        "Back": "{{Front}}\n\n<hr id=answer>\n\n{{type:Back}}"
+    }
+}

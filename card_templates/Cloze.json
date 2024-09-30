@@ -1,0 +1,6 @@
+{
+    "Cloze": {
+        "Front": "{{cloze:Text}}",
+        "Back": "{{cloze:Text}}<br>\n{{Back Extra}}"
+    }
+}
