@@ -66,6 +66,10 @@ Run the formatting script to see the card templates with proper indentation
 python utils/render_json.py card_templates/Basic.json > temp.html
 ```
 
+### Warning!
+
+The template that is fetched includes both the front and back, so the re-renderer will generate an HTML page that has both these on it. Be sure to delete the "Back" part or you'll end up with a template with the answer on the front!!
+
 ## 📈 Git Workflow
 
 - **Automatic Commits:** The script stages and commits any changes to the `card_templates/` directory with a timestamped message.
