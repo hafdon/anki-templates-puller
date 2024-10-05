@@ -1,12 +1,10 @@
 import os
 import json
-import requests
+
+from invoke import invoke
 
 
 # ------------------------------ Configuration ------------------------------
-
-# AnkiConnect configuration
-ANKI_CONNECT_URL = "http://localhost:8765"
 
 # Directory to store card templates
 TEMPLATES_DIR = "card_templates"
@@ -19,31 +17,6 @@ GIT_REPO_PATH = os.getcwd()
 
 # Commit message template
 COMMIT_MESSAGE_TEMPLATE = "Update Anki card templates: {timestamp}"
-
-# -----------------------------------------------------------------------------
-
-
-def invoke(action, params=None, version=6):
-    """
-    Helper function to communicate with AnkiConnect.
-    """
-    payload = {"action": action, "version": version}
-    if params:
-        payload["params"] = params
-
-    try:
-        response = requests.post(ANKI_CONNECT_URL, json=payload)
-        response.raise_for_status()
-        result = response.json()
-
-        if result.get("error"):
-            print(f"Error with action '{action}': {result['error']}")
-            return None
-
-        return result.get("result")
-    except requests.exceptions.RequestException as e:
-        print(f"AnkiConnect request failed: {e}")
-        return None
 
 
 def fetch_note_types():
