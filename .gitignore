@@ -3,3 +3,7 @@
 __pycache__
 *.pyc
 temp.*
+
+# Ignore everything in the directory, except the directory itself
+/to_update/*
+!/to_update/
